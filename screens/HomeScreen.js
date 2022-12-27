@@ -1,4 +1,11 @@
-import { View, Text, Image, SafeAreaView, TextInput } from "react-native";
+import {
+  View,
+  Text,
+  Image,
+  SafeAreaView,
+  TextInput,
+  ScrollView,
+} from "react-native";
 import React, { useLayoutEffect } from "react";
 import { useNavigation } from "@react-navigation/native";
 import {
@@ -7,6 +14,8 @@ import {
   AdjustmentsVerticalIcon,
   MagnifyingGlassCircleIcon,
 } from "react-native-heroicons/solid";
+import Categories from "../components/Categories";
+import FeaturedRow from "../components/FeaturedRow";
 
 const HomeScreen = () => {
   const navigation = useNavigation();
@@ -34,15 +43,15 @@ const HomeScreen = () => {
         "https://picsum.photos/200/300?random=" +
         Math.floor(Math.random() * 100);
     }
-    console.log("hi " + picUrl);
+
     return picUrl;
   };
 
   return (
-    <SafeAreaView className="bg-zinc-900 px-4 flex-1">
-      <View className="mt-8 w-full">
+    <SafeAreaView className="bg-zinc-900 pt-8 flex-1 text-white">
+      <View className="">
         {/* header */}
-        <View className="flex pb-3 items-center space-x-2 flex-row">
+        <View className="flex pb-3 items-center space-x-2 flex-row px-4">
           <View className="flex-none">
             <Image
               source={{
@@ -51,7 +60,7 @@ const HomeScreen = () => {
               className="h-7 w-7 bg-yellow-400 rounded-full"
             />
           </View>
-          <View className="flex-1">
+          <View className="flex-1 ">
             <Text className="text-zinc-300 text-xs">Delivery Now!</Text>
             <Text className="font-bold text-white text-xl">
               Current Location
@@ -69,8 +78,8 @@ const HomeScreen = () => {
         </View>
 
         {/* search */}
-        <View className="flex-row pb-2 items-center space-x-2">
-          <View className="flex-row flex-1 items-center bg-gray-300 rounded-xl px-1">
+        <View className="flex-row pb-2 items-center space-x-2 px-4">
+          <View className="flex-row flex-1 items-center bg-slate-100 rounded px-2">
             <MagnifyingGlassCircleIcon size={30} color="black" />
             <TextInput
               placeholder="Restaurants and cuisines"
@@ -78,6 +87,31 @@ const HomeScreen = () => {
             />
           </View>
           <AdjustmentsVerticalIcon size={30} color="#FDDA0D" />
+        </View>
+
+        {/* Scroll view */}
+
+        <View className="bg-slate-800 mt-4">
+          <ScrollView className=" rounded">
+            <Categories />
+          </ScrollView>
+        </View>
+
+        <View className="rounded">
+          <FeaturedRow
+            title="Restaurants near you!"
+            description="Why not support your local restaurants tonight"
+          />
+
+          <FeaturedRow
+            title="Restaurants near you!"
+            description="Why not support your local restaurants tonight"
+          />
+
+          <FeaturedRow
+            title="Restaurants near you!"
+            description="Why not support your local restaurants tonight"
+          />
         </View>
       </View>
     </SafeAreaView>
