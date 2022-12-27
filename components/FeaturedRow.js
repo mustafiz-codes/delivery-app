@@ -10,7 +10,7 @@ const FeaturedRow = ({ title, description }) => {
         <Text className="text-white text-lg">{title}</Text>
         <ArrowRightIcon color="#FDDA0D" />
       </View>
-      <Text className="text-gray-500 py-1">{description}</Text>
+      <Text className="text-zinc-400 py-1">{description}</Text>
 
       <ScrollView
         horizontal
@@ -20,7 +20,46 @@ const FeaturedRow = ({ title, description }) => {
       >
         <RestaurantCard
           id={111}
-          imgUrl=""
+          imgUrl="https://picsum.photos/200/300?random=16"
+          title="Yo! Sushi"
+          rating={4.5}
+          genre="Japanese"
+          address="111 Main St. London"
+          short_description="This is a test description"
+          dishes={[]}
+          long={2}
+          lat={1}
+        />
+
+        <RestaurantCard
+          id={111}
+          imgUrl="https://picsum.photos/200/300?random=16"
+          title="Pizza Con"
+          rating={4.5}
+          genre="Italian"
+          address="111 Main St. London"
+          short_description="This is a test description"
+          dishes={[]}
+          long={2}
+          lat={1}
+        />
+
+        <RestaurantCard
+          id={111}
+          imgUrl="https://picsum.photos/200/300?random=16"
+          title="Yo! Sushi"
+          rating={4.5}
+          genre="Japanese"
+          address="111 Main St. London"
+          short_description="This is a test description"
+          dishes={[]}
+          long={2}
+          lat={1}
+        />
+
+        <RestaurantCard
+          id={111}
+          imgUrl="https://picsum.photos/200/300?random=16"
           title="Yo! Sushi"
           rating={4.5}
           genre="Japanese"

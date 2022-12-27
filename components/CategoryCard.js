@@ -2,7 +2,8 @@ import { View, Text, ScrollView, TouchableOpacity, Image } from "react-native";
 import React from "react";
 
 const CategoryCard = ({ imgUrl, title }) => {
-  console.log("test ", imgUrl);
+  console.log("test ", imgUrl, typeof imgUrl);
+
   return (
     <TouchableOpacity className="mr-3 mb-2">
       <Image

@@ -49,8 +49,8 @@ const HomeScreen = () => {
 
   return (
     <SafeAreaView className="bg-zinc-900 pt-8 flex-1 text-white">
-      <View className="">
-        {/* header */}
+      {/* header */}
+      <ScrollView>
         <View className="flex pb-3 items-center space-x-2 flex-row px-4">
           <View className="flex-none">
             <Image
@@ -90,8 +90,7 @@ const HomeScreen = () => {
         </View>
 
         {/* Scroll view */}
-
-        <View className="bg-slate-800 mt-4">
+        <View className="bg-black mt-4">
           <ScrollView className=" rounded">
             <Categories />
           </ScrollView>
@@ -112,8 +111,13 @@ const HomeScreen = () => {
             title="Restaurants near you!"
             description="Why not support your local restaurants tonight"
           />
+
+          <FeaturedRow
+            title="Restaurants near you!"
+            description="Why not support your local restaurants tonight"
+          />
         </View>
-      </View>
+      </ScrollView>
     </SafeAreaView>
   );
 };
