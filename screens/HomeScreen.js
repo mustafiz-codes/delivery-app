@@ -5,6 +5,7 @@ import {
   SafeAreaView,
   TextInput,
   ScrollView,
+  TouchableOpacity,
 } from "react-native";
 import React, { useLayoutEffect } from "react";
 import { useNavigation } from "@react-navigation/native";
@@ -67,6 +68,24 @@ const HomeScreen = () => {
               <ChevronDownIcon size={25} color="#FDDA0D" />
             </Text>
           </View>
+          {/* <View className="flex-none">
+            <Image
+              source={{
+                uri: randomPicture("map"),
+              }}
+              onPress={() => navigation.push("Map")}
+              className="h-7 w-7 bg-yellow-400 rounded-full"
+            />
+          </View> */}
+          <TouchableOpacity onPress={() => navigation.push("Map")}>
+            <Image
+              source={{
+                uri: randomPicture("map"),
+              }}
+              className="h-7 w-7 bg-yellow-400 rounded-full"
+              onPress={() => navigation.navigate(Map)}
+            />
+          </TouchableOpacity>
           <View className="flex-none">
             <Image
               source={{
